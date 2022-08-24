@@ -1,6 +1,6 @@
 package models.loan
 
-enum class LoanYearEnum(val id: Int, val description: String, val months: Int) {
+enum class LoanYearEnum(private val id: Int,private val description: String, val months: Int) {
     ONE_YEAR(1, "One year", 12),
     TWO_YEAR(2, "Two year", 24),
     THREE_YEAR(3, "Three year", 36),
@@ -10,6 +10,4 @@ enum class LoanYearEnum(val id: Int, val description: String, val months: Int) {
     override fun toString(): String {
         return "$id. $description -> $months months "
     }
-
-
 }
