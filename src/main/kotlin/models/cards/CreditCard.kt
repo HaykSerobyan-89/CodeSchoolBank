@@ -1,6 +1,5 @@
 package models.cards
 
-import models.user.Customer
 import models.user.allCustomers
 import java.time.LocalDate
 import kotlin.random.Random
