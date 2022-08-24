@@ -116,7 +116,7 @@ class App {
             while (run) {
                 println("--------------------------------")
                 for (action in ActionEnum.values()) {
-                    println("${action.id}. ${action.description}")
+                    println(action)
                 }
                 when (scan.next()) {
                     "1" -> {
