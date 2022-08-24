@@ -42,6 +42,4 @@ enum class CreditCardEnum(val id: Int, val type: String, val description: String
     override fun toString(): String {
         return type
     }
-
-
 }
