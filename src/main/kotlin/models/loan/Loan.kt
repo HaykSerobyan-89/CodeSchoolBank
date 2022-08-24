@@ -1,6 +1,5 @@
 package models.loan
 
-import models.cards.CreditCard
 import java.time.LocalDate
 
 var allLoans = mutableListOf<Loan>()
@@ -32,12 +31,11 @@ class Loan(
         return schedule
     }
 
+    // create new loan and add to customer 'loans' field
     fun create() {}
 
     override fun toString(): String {
         return "Loan(amount=$amount, loanType=$loanType, customerId=$customerId, loanYear=$loanYear, schedule=$schedule)"
     }
-
-
 }
 
