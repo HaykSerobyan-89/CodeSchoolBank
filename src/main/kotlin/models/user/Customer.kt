@@ -3,7 +3,6 @@ package models.user
 import models.cards.CreditCard
 import models.cards.CreditCardEnum
 import models.loan.Loan
-import models.loan.LoanTypeEnum
 
 private var lastID: Int = 0
 var allCustomers = HashMap<Int, Customer>()
