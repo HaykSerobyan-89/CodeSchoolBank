@@ -1,4 +1,4 @@
-package models.actions
+package actions
 
 enum class ActionEnum(private val id: Int,private val description: String) {
     REGISTER(1, "Register customer"),

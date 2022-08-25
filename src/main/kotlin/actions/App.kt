@@ -1,4 +1,4 @@
-package models.actions
+package actions
 
 import models.cards.CreditCard
 import models.cards.CreditCardEnum
