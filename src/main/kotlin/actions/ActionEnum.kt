@@ -1,16 +1,12 @@
 package actions
 
-enum class ActionEnum(private val id: Int,private val description: String) {
-    REGISTER(1, "Register customer"),
-    SHOW_ALL_CUSTOMERS(2, "Show all customers"),
-    TAKE_CARD(3, "Take credit card"),
-    SHOW_ALL_CARDS(4, "Show all cards"),
-    SHOW_CARDS(5, "Show my all cards"),
-    CALCULATE_LOAN(6, "Calculate and show loan payment schedule"),
-    SHOW_ALL_LOANS(7, "Show all loans"),
-    EXIT(8, "Exit the app");
+import models.bank.Bank
+
+enum class ActionEnum(private val text: String) {
+    WELCOME("Hello, Our bank welcomes you."),
+    CHOOSE_BRANCH("Please choose which branch you want to be served at");
 
     override fun toString(): String {
-        return "$id. $description"
+        return "$text"
     }
 }

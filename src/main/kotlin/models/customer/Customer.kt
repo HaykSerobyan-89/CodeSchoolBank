@@ -1,4 +1,4 @@
-package models.user
+package models.customer
 
 import models.cards.CreditCard
 import models.cards.CreditCardEnum

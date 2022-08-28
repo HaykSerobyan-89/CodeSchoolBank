@@ -1,14 +1,14 @@
 package models.cards
 
-import models.user.allCustomers
+import models.customer.allCustomers
 import java.time.LocalDate
 import kotlin.random.Random
 
-private var cardLastId = 0L
+private var cardId = 0
 var allCards = mutableListOf<CreditCard>()
 
 class CreditCard(private val cardType: CreditCardEnum, private val customerId: Int) {
-    private var id = cardLastId + 1
+    private var id = cardId + 1
     var balance: Long = 0
     var cardAccountNumber: String = ""
     private val customerFullName = allCustomers[customerId]?.getFullName()
@@ -17,7 +17,7 @@ class CreditCard(private val cardType: CreditCardEnum, private val customerId: I
 
 
     init {
-        cardLastId += 1
+        cardId += 1
         validDate = validDateStr(generateValidDate())
         cardAccountNumber = generateCardAccountNumber()
         cvv = generateCVV()
