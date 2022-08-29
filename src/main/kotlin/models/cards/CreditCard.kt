@@ -1,6 +1,5 @@
 package models.cards
 
-import models.customer.allCustomers
 import java.time.LocalDate
 import kotlin.random.Random
 
@@ -11,7 +10,6 @@ class CreditCard(private val cardType: CreditCardEnum, private val customerId: I
     private var id = cardId + 1
     var balance: Long = 0
     var cardAccountNumber: String = ""
-    private val customerFullName = allCustomers[customerId]?.getFullName()
     private var validDate: String = ""
     private var cvv: Int = 0
 
@@ -22,8 +20,6 @@ class CreditCard(private val cardType: CreditCardEnum, private val customerId: I
         cardAccountNumber = generateCardAccountNumber()
         cvv = generateCVV()
         allCards.add(this)
-        allCustomers[customerId]?.creditCards?.add(this)
-
     }
 
     private fun generateValidDate(year: Int = 5): LocalDate {
@@ -51,11 +47,5 @@ class CreditCard(private val cardType: CreditCardEnum, private val customerId: I
         }
         return cardAccountNumber
     }
-
-    override fun toString(): String {
-        return "CreditCard(cardId=$id, cardType='$cardType', balance=$balance AMD, customer='$customerFullName', " +
-                "validDate='$validDate', cardAccountNumber='$cardAccountNumber', cvv=$cvv)"
-    }
-
 
 }

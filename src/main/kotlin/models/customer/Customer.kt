@@ -1,39 +1,39 @@
 package models.customer
 
+import models.bank.Bank
 import models.cards.CreditCard
 import models.cards.CreditCardEnum
-import models.loan.Loan
+import models.customer.identification.Document
+import models.customer.identification.IdCard
+import models.customer.identification.Passport
 
-private var lastID: Int = 0
-var allCustomers = HashMap<Int, Customer>()
 
-class Customer(
-    private val name: String,
-    private val surname: String,
-    var creditCards: MutableList<CreditCard> = mutableListOf(),
-    var loans: MutableList<Loan> = mutableListOf()
-) {
-    private val id: Int = lastID + 1
+private var customerID: Int = 0
+
+class Customer(val document: Document) {
+    private val id: Int = customerID + 1
+    var balance: Long = 0
+    private val name: String = document.name
+    private val surname: String = document.surname
+    val birthDate = document.birthDate
+    private var account: String
 
     init {
-        lastID += 1
-        allCustomers[lastID] = this
-
+        customerID += 1
+        account = Bank.generateAccount()
+        if (document is IdCard) {
+            Bank.customers[document.numberID] = this
+        } else if (document is Passport) {
+            Bank.customers[document.serialNumber] = this
+        }
     }
 
     fun getFullName(): String {
         return "$name $surname".toUpperCase()
     }
 
-    fun takeNewCreditCard(cardType: CreditCardEnum): CreditCard {
-        val newCreditCard = CreditCard(cardType, id)
-        creditCards.add(newCreditCard)
-        return newCreditCard
-    }
 
     override fun toString(): String {
-        return "Customer(id=$id, name='$name', surname='$surname', creditCards=$creditCards, loans=$loans)"
+        return "Customer(id=$id, balance=$balance, account='$account', document=$document)"
     }
-
-
 }

@@ -6,6 +6,14 @@ import java.util.Date
 class Passport(
     name: String,
     surname: String,
-    birthDate: Date, address: Address
-) : Document(name, surname, birthDate, address) {
+    birthDate: Date,
+    private val address: Address,
+    val serialNumber: String
+) : Document(name, surname, birthDate) {
+
+    override fun toString(): String {
+        return "IdCard(name='$name', surname='$surname', " +
+                "birthdate='${birthDate.date}/${birthDate.month}/${birthDate.year}', " +
+                "address=$address, serialNumber='$serialNumber')"
+    }
 }
