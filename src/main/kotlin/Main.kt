@@ -4,6 +4,7 @@ import app.menu.MainMenu
 import models.bank.Bank
 import models.customer.Customer
 import models.customer.identification.IdCard
+import models.deposit.Deposit
 import java.util.Date
 
 fun main(args: Array<String>) {
@@ -13,4 +14,5 @@ fun main(args: Array<String>) {
     println(Bank.branches)
     println(Bank.customers)
     App.start()
+
 }

@@ -5,7 +5,8 @@ enum class ServicesEnum(private val id: Int, private val service: String) {
     DEPOSIT(2,"Deposit"),
     LOAN(3, "Loan"),
     CREDIT_CARD(4, "Credit card"),
-    EXIT(5, "Exit the bank");
+    ALL_CUSTOMERS(5, "See all customers"),
+    EXIT(6, "Exit the bank");
 
 
     override fun toString(): String {

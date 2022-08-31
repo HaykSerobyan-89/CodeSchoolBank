@@ -15,6 +15,6 @@ class IdCard(
     override fun toString(): String {
         return "IdCard(name='$name', surname='$surname', " +
                 "birthdate='${birthDate.date}/${birthDate.month}/${birthDate.year}', " +
-                "$numberID='$numberID', socialCard='$socialCardNumbers')"
+                "numberID='$numberID', socialCard='$socialCardNumbers')"
     }
 }

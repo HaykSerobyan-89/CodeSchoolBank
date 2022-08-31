@@ -22,6 +22,10 @@ class Bank(val name: String, private val address: Address) {
         var loans = HashMap<Int, List<Loan>>()
         var cards = HashMap<Int, List<CreditCard>>()
 
+        fun test() {
+
+        }
+
         fun generateAccount(): String {
             var account = "205"
             account += Random.nextLong(from = 1000000000000, until = 9999999999999).toString()
@@ -32,7 +36,6 @@ class Bank(val name: String, private val address: Address) {
     fun addNewBranch(address: Address): models.bank.Bank {
         return Bank(name, address)
     }
-
 
 
     override fun toString(): String {

@@ -126,7 +126,12 @@ class MainMenu {
                     println("CARD MENU")
                 }
 
-                "5" -> System.out
+                "5" -> {
+                    for (customer in Bank.customers)
+                    println(customer)
+                }
+
+                "6" -> System.out
                 else -> show()
 
             }
