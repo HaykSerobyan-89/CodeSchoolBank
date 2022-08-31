@@ -26,6 +26,7 @@ class CashMenu {
                     print("The amount of money: ")
                     val money = scan.nextLong()
                     MainMenu.customer.balance += money
+                    print(MainMenu.customer)
                     println("Your account balance ${MainMenu.customer.balance}")
                     println("Transaction completed successfully !!!")
                     show()

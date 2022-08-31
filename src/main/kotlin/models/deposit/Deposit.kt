@@ -16,15 +16,16 @@ class Deposit {
     )
 
     fun calculate(month: Int, amount: Long): Long {
-        var monthRate : Double? = periodRate[month]?.div(12)
+        val monthRate : Double? = periodRate[month]?.div(12)
         var total = amount.toDouble()
         println(monthRate)
 
-        if (month  in 1..36){
-            for (i in 1..month) {
-                // ba urish vonc grem vor ardaracvac lini ???
-                total += ((total * monthRate!!) / 100)
-                println(total)
+        if (month in 1..36) {
+            if (monthRate != null) {
+                for (i in 1..month) {
+                    total += ((total * monthRate) / 100)
+                    println(total)
+                }
             }
         } else println("Please choose month from 1 until 36")
 

@@ -57,12 +57,12 @@ class MainMenu {
             when (scan.next().trim()) {
                 "1" -> {
                     val customer = Customer(dataEntry("IdCard"))
-                    println(customer)
+                    MainMenu.customer = customer
                 }
 
                 "2" -> {
                     val customer = Customer(dataEntry("Passport"))
-                    println(customer)
+                    MainMenu.customer = customer
                 }
 
                 "3" -> {
